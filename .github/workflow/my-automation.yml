@@ -1,0 +1,23 @@
+name: Mera phela CI/CD Workflow
+
+on:
+  push:
+      branches: [ main ]
+
+
+job:
+   python-test-job:
+      run-on: ubuntu-latest
+      Steps:
+         - name: code copy karo
+          user: actions/checkout@v4
+
+          - name: python setup karo
+            user: actions/setup-python@v5
+
+            with:
+               python-version:  '3.10'
+
+
+          - name: mera python code run kro
+            run: python app.py
